@@ -21,10 +21,10 @@ class Login extends Component {
   };
 
   render() {
-    const customerName = Cookies.get("username");
-    if (customerName !== undefined) {
-      return <Redirect to="/" />;
-    }
+    // const customerName = Cookies.get("username");
+    // if (customerName !== undefined) {
+    //   return <Redirect to="/" />;
+    // }
     const { username } = this.state;
     return (
       <div className="login-page-container">

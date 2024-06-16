@@ -1,0 +1,21 @@
+.game-item-container {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 4px solid black;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .game-item-container {
+    width: 90px;
+    height: 90px;
+  }
+}
+.image-item {
+  width: 50px;
+  height: 50px;
+}

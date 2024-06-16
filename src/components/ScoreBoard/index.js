@@ -7,23 +7,17 @@ const ScoreBoard = () => {
   const username = Cookies.get("username");
 
   const getMins = (time) => {
-    const value = time / 60;
-    if (value < 9) {
-      return `0${value}`;
-    }
-    return value;
+    const mins = Math.floor(time / 60);
+    return mins < 10 ? `0${mins}` : `${mins}`;
   };
 
   const getSeconds = (time) => {
     const secs = time % 60;
-    if (secs < 9) {
-      return `0${secs}`;
-    }
-    return secs;
+    return secs < 10 ? `0${secs}` : `${secs}`;
   };
 
   return (
-    <ScoreContext>
+    <ScoreContext.Consumer>
       {(value) => {
         const { score, time } = value;
         const mins = getMins(time);
@@ -52,7 +46,7 @@ const ScoreBoard = () => {
           </div>
         );
       }}
-    </ScoreContext>
+    </ScoreContext.Consumer>
   );
 };
 

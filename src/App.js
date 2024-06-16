@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import ScoreBoard from "./components/ScoreBoard";
 import GameBoard from "./components/GameBoard";
@@ -10,15 +10,11 @@ class App extends Component {
   state = { score: 0, time: 0 };
 
   updateScore = (value) => {
-    this.setState((prevState) => ({
-      score: prevState.score + value,
-    }));
+    this.setState({ score: value });
   };
 
-  updateTime = () => {
-    this.setState((prevState) => ({
-      time: prevState.time + 1,
-    }));
+  updateTime = (value) => {
+    this.setState({ time: value });
   };
 
   render() {
@@ -32,14 +28,12 @@ class App extends Component {
           updateTime: this.updateTime,
         }}
       >
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/" component={GameBoard} />
-            <Route exact path="/score" component={ScoreBoard} />
-            <Redirect to="/login" />
-          </Switch>
-        </BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={GameBoard} />
+          <Route exact path="/score" component={ScoreBoard} />
+          <Redirect to="/login" />
+        </Switch>
       </ScoreContext.Provider>
     );
   }
