@@ -1,0 +1,113 @@
+.score-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+.react-tiles-head {
+  margin-top: 30px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Roboto";
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .react-tiles-head {
+    font-size: 28px;
+  }
+}
+.score-time-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .score-time-container {
+    width: 80%;
+  }
+}
+.score-time-heading {
+  margin-top: 30px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Roboto";
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .score-time-heading {
+    font-size: 24px;
+  }
+}
+.game-results-container {
+  border: 4px solid black;
+  width: 90%;
+  flex-grow: 1;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .game-results-container {
+    width: 90%;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+}
+.welcome-user-container {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.welcome-heading {
+  font-size: 24px;
+  text-decoration: underline;
+  color: black;
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: bold;
+}
+.welcome-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: yellow;
+  padding-top: 10px;
+  width: 30px;
+  height: 30px;
+  text-decoration: underline;
+  text-align: center;
+  text-decoration-color: black;
+}
+.game-finished-heading {
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Roboto";
+  text-decoration: underline;
+  padding-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .game-finished-heading {
+    font-size: 34px;
+    padding-bottom: 70px;
+  }
+}
+.final-score-time-heading {
+  color: lightcoral;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Roboto";
+  text-decoration: underline;
+  margin: 0px;
+  padding: 0px;
+}
+@media screen and (min-width: 768px) {
+  .final-score-time-heading {
+    font-size: 30px;
+  }
+}

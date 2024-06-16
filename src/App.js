@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import Login from "./components/Login";
+import ScoreBoard from "./components/ScoreBoard";
+import GameBoard from "./components/GameBoard";
+import ScoreContext from "./context/ScoreContext";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { score: 0, time: 0 };
+
+  updateScore = (value) => {
+    this.setState((prevState) => ({
+      score: prevState.score + value,
+    }));
+  };
+
+  updateTime = () => {
+    this.setState((prevState) => ({
+      time: prevState.time + 1,
+    }));
+  };
+
+  render() {
+    const { score, time } = this.state;
+    return (
+      <ScoreContext.Provider
+        value={{
+          score,
+          time,
+          updateScore: this.updateScore,
+          updateTime: this.updateTime,
+        }}
+      >
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={GameBoard} />
+            <Route exact path="/score" component={ScoreBoard} />
+            <Redirect to="/login" />
+          </Switch>
+        </BrowserRouter>
+      </ScoreContext.Provider>
+    );
+  }
 }
 
 export default App;
