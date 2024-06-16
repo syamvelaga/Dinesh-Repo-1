@@ -28,12 +28,14 @@ class App extends Component {
           updateTime: this.updateTime,
         }}
       >
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={GameBoard} />
-          <Route exact path="/score" component={ScoreBoard} />
-          <Redirect to="/login" />
-        </Switch>
+        <>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={GameBoard} />
+            <Route exact path="/score" component={ScoreBoard} />
+            <Redirect to="/login" />
+          </Switch>
+        </>
       </ScoreContext.Provider>
     );
   }
